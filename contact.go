@@ -1,4 +1,4 @@
-package main
+package contact
 
 import (
 	"fmt"
@@ -69,27 +69,4 @@ func(a *All_contacts)recently_added_contact()contact{
 }
 
 
-func main() {
-	c := All_contacts{}
-	lok := contact{
-		contact_name: "lokesh",
-		number:       8709782727,
-		email_id:     "loki@gamil.com",
-	}
-	gub := contact{
-		contact_name: "h",
-		number:       8727,
-		email_id:     "gub@gamil.com",
-	}
-	c.add_contact(lok)
-	c.add_contact(gub)
-	fmt.Println(c.contacts)
-	c.fav_contact(gub)
-	fmt.Println(c.favourite_contacts)
-	c.search_contact("h")
-	c.list_contacts()
-	c.delete_contact("h")
-	c.list_contacts()
-	fmt.Println(c.recently_added_contact())
 
-}
