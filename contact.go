@@ -4,13 +4,13 @@ import (
 	"fmt"
 )
 
-type contact struct {
+type Contact struct {
 	contact_name string
 	number       int
 	email_id     string
 }
 
-type contact_list interface {
+type Contact_list interface {
 	add_conatct()
 	fav_contacts()
 	search_contact()
@@ -24,21 +24,21 @@ type All_contacts struct {
 	favourite_contacts []contact
 }
 
-func (a *All_contacts) add_contact(x contact) {
+func (a *All_contacts) Add_contact(x contact) {
 	a.contacts = append(a.contacts, x)
 }
-func (a *All_contacts) list_contacts(){
+func (a *All_contacts) List_contacts(){
 		for i, contact := range a.contacts {
 			fmt.Printf("%d. Name: %s, Phone: %d\n", i+1, contact.contact_name, contact.number)
 		}
 		
 	}
 
-func (a *All_contacts) fav_contact(y contact) {
+func (a *All_contacts)fav_contact(y contact) {
 	a.favourite_contacts = append(a.favourite_contacts, y)
 }
 
-func (a *All_contacts)search_contact(z string) {
+func (a *All_contacts)Search_contact(z string) {
 	found := false
 	for _, i := range a.contacts {
 		if i.contact_name == z {
@@ -63,7 +63,7 @@ func (a *All_contacts)delete_contact(w string){
 
 }
 
-func(a *All_contacts)recently_added_contact()contact{
+func(a *All_contacts)Recently_added_contact()contact{
 	b:= len(a.contacts)
 	return a.contacts[b-1]
 }
